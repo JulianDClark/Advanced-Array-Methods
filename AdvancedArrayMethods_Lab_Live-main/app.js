@@ -140,30 +140,78 @@ console.log('mexicanFood from filterExample', mexicanFood)
 //Filter
 
 function problemOne(){
+let results;
+    results = dishes.filter(function(dish){
+        console.log("vegetarian:")
+        if(dish.cuisine === "Vegetarian"){
+            return true;
+        }
+        else{
+            return false;
+        }})
 
-    let results;
-
-    return results;
+     return results;
 }
+
+let veganfood = problemOne()
+console.log('problem 1', veganfood)
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
+function problemTwo(){  
+let userDish = prompt("What's your dish?")
+    let results;
+    results = dishes.filter(function(dish){
+    if(dish.cuisine === userDish){
+            return true;
+        }
+        else{
+            return false;
+        }})
 
+     return results;
+}
 
+let problem2 = problemTwo 
+console.log(problem2)
 
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function finditalian() {
+  let italiandish = dish.filter(function (dish) {
+    if (dish.cuisine === 'italian' && dish.servings > 5) {
+      return true;
+    }
+  });
+  return italiandish;
+}
 
+console.log("italian dish", finditalian());
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
 
-
+function findMatch(){
+let result = dish.filter(function (dish){
+ if (dish.id === dish.servings) {
+    return True;
+ }
+});
+return results;
+}
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function finddish() {
+  let servingcount = dish.filter(function (dish) {
+    if (dish.count%2 === 0) {
+      return true;
+    }
+  });
+  return servingcount;
+}
 
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
@@ -171,22 +219,54 @@ function problemOne(){
 //Double Hint: Research 'javascript does array include item'
 //Filter
 
+const ingredients = ['chickpea'];
+
+console.log(ingredients.includes('chickpea'));
+
+console.log(ingredients.includes('tomato'));
 
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
+let userDish = prompt("What's your ingredient?")
+function findingredient() {
+  let ingredientdish = ingredient.filter(function (dish) {
+    if (ingredient.cuisine === tomato) {
+      return true;
+    }
+  });
+  return ingredientdish ;
+}
 
+console.log("your ingredient is:", findingredient());
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
 
+function reformatcusinetype() {
+  let reformatedcusine = dishes.map(function (dish) {
+    return dish.cuisine;
+  });
+  return reformatedcusinetype;
 
+let result = dishes.map(function(dish){
+    return dish.cuisine, dish.name
+})
+return result
+}
+console.log(reformatcusinetype())
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
 
-
+function reformatcusinetype() {
+  let reformatedcusine = cusine.map(function (cusine) {
+    return cusine.dish;
+  });
+  return reformatedcusinetype;
+}
+// i dont know if it was asking for the same thing?
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
 
@@ -205,4 +285,4 @@ function problemOne(){
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
-//13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
+//13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects
